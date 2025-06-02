@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fiches de Révision – Techavenir</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">Techavenir</div>
+    <nav>
+      <a href="Accueil.html">Accueil</a>
+      <a href="Accueil.html#vision">Vision</a>
+      <a href="https://moodle.epf.fr" target="_blank">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="container">
+  <h1 style="text-align: center; color: var(--primary);">📚 Mes Fiches de Révision</h1>
+  <p style="text-align: center; margin-top: 1rem;">
+    Sélectionne un fichier PDF à visionner ou télécharger
+  </p>
+
+  <div class="upload-section">
+    <input type="file" id="pdfFile" accept="application/pdf" />
+    <br />
+    <button onclick="previewPDF()">📖 Visionner</button>
+    <button onclick="downloadPDF()">⬇️ Télécharger</button>
+
+    <iframe id="pdfViewer"></iframe>
+  </div>
+
+  <h2 style="text-align: center; margin-top: 3rem; color: var(--primary);">📥 Fiches en ligne</h2>
+
+  <div class="fiche-cards">
+    <div class="fiche-card">
+      <h3>📄 Fiche 1 – Résistance des Matériaux</h3>
+      <div class="fiche-buttons">
+        <button
+          class="btn"
+          onclick="visionnerEnLigne('https://drive.google.com/file/d/19i65g06_nhSZx5naNHAza6lH6VwfBbN2/preview')"
+        >
+          👁️ Visionner
+        </button>
+        <a
+          href="https://drive.google.com/uc?export=download&id=19i65g06_nhSZx5naNHAza6lH6VwfBbN2"
+          class="btn"
+          >⬇️ Télécharger</a
+        >
+      </div>
+    </div>
+
+    <div class="fiche-card">
+      <h3>📄 Fiche 2 – Thermodynamique</h3>
+      <div class="fiche-buttons">
+        <button
+          class="btn"
+          onclick="visionnerEnLigne('https://drive.google.com/file/d/1tFkdv1zux1VV2rkNBI_0eJJjvIqwfJc-/preview')"
+        >
+          👁️ Visionner
+        </button>
+        <a
+          href="https://drive.google.com/uc?export=download&id=1tFkdv1zux1VV2rkNBI_0eJJjvIqwfJc-"
+          class="btn"
+          >⬇️ Télécharger</a
+        >
+      </div>
+    </div>
+
+    <div class="fiche-card">
+      <h3>📄 Fiche 3 – Électrotechnique</h3>
+      <div class="fiche-buttons">
+        <button
+          class="btn"
+          onclick="visionnerEnLigne('https://drive.google.com/file/d/1gAn6hkQWSX2rBx6z1rYZF2oJ4zQe8ItF/preview')"
+        >
+          👁️ Visionner
+        </button>
+        <a
+          href="https://drive.google.com/uc?export=download&id=1gAn6hkQWSX2rBx6z1rYZF2oJ4zQe8ItF"
+          class="btn"
+          >⬇️ Télécharger</a
+        >
+      </div>
+    </div>
+
+    <div class="fiche-card">
+      <h3>📄 Fiche 4 – Automatique</h3>
+      <div class="fiche-buttons">
+        <button
+          class="btn"
+          onclick="visionnerEnLigne('https://drive.google.com/file/d/1FfsUPMOQpt87S5qNcqWkiA80-7C4L1Ag/preview')"
+        >
+          👁️ Visionner
+        </button>
+        <a
+          href="https://drive.google.com/uc?export=download&id=1FfsUPMOQpt87S5qNcqWkiA80-7C4L1Ag"
+          class="btn"
+          >⬇️ Télécharger</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Techavenir – Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+  let selectedFile;
+
+  document.getElementById('pdfFile').addEventListener('change', function (event) {
+    selectedFile = event.target.files[0];
+  });
+
+  function previewPDF() {
+    if (!selectedFile) {
+      alert('Merci de sélectionner un fichier PDF d\'abord !');
+      return;
+    }
+    const fileURL = URL.createObjectURL(selectedFile);
+    const iframe = document.getElementById('pdfViewer');
+    iframe.src = fileURL;
+    iframe.style.display = 'block';
+    iframe.style.width = '100%';
+    iframe.style.height = '600px';
+    iframe.style.marginTop = '1rem';
+  }
+
+  function downloadPDF() {
+    if (!selectedFile) {
+      alert('Merci de sélectionner un fichier PDF d\'abord !');
+      return;
+    }
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(selectedFile);
+    link.download = selectedFile.name;
+    link.click();
+  }
+
+  function visionnerEnLigne(url) {
+    const iframe = document.getElementById('pdfViewer');
+    iframe.src = url;
+    iframe.style.display = 'block';
+    iframe.style.width = '100%';
+    iframe.style.height = '600px';
+    iframe.style.marginTop = '1rem';
+    iframe.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+<script>
+  (function () {
+    if (!window.chatbase || window.chatbase('getState') !== 'initialized') {
+      window.chatbase = (...arguments) => {
+        if (!window.chatbase.q) {
+          window.chatbase.q = [];
+        }
+        window.chatbase.q.push(arguments);
+      };
+      window.chatbase = new Proxy(window.chatbase, {
+        get(target, prop) {
+          if (prop === 'q') {
+            return target.q;
+          }
+          return (...args) => target(prop, ...args);
+        },
+      });
+    }
+    const onLoad = function () {
+      const script = document.createElement('script');
+      script.src = 'https://www.chatbase.co/embed.min.js';
+      script.id = 'EY-CzNa1eaQVEPs238EkB';
+      script.domain = 'www.chatbase.co';
+      document.body.appendChild(script);
+    };
+    if (document.readyState === 'complete') {
+      onLoad();
+    } else {
+      window.addEventListener('load', onLoad);
+    }
+  })();
+</script>
+
+</body>
+</html>

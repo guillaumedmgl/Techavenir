@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions – Techavenir</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">Techavenir</div>
+      <nav style="display: flex; align-items: center; gap: 20px;">
+        <a href="Accueil.html">Accueil</a>
+        <a href="Accueil.html#vision">Vision</a>
+        <a href="https://moodle.epf.fr" target="_blank">Contact</a>
+        <!-- Bouton IA -->
+  <button onclick="location.href='ia.html'" style="
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="IA" width="24" height="24" />
+</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="container">
+    <h1>Nos solutions pour l’enseignement 4.0</h1>
+    <p>Découvrez comment Techavenir transforme l’éducation avec des technologies de pointe.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Chat Bot interactif</h3>
+        <p>Un chat Bot disponible 24/24 pour un suivit adapté et disponible.</p>
+      </div>
+      <div class="card">
+        <h3>Nouvelle salle de classe</h3>
+        <p>Remodélisation des batiments et des salles de classes pour une expérience immersive.</p>
+      </div>
+      <div class="card">
+        <h3>Analyse de données</h3>
+        <p>Suivi de l’engagement des élèves grâce à des outils d’analyse intelligente.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Techavenir – Tous droits réservés.</p>
+    </div>
+  </footer>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="EY-CzNa1eaQVEPs238EkB";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+</body>
+</html>

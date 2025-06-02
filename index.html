@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Techavenir – L’enseignement 4.0</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">Techavenir</div>
+      <nav style="display: flex; align-items: center; gap: 20px;">
+        <a href="#">Accueil</a>
+        <a href="#vision">Vision</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="fiches.html">fiches</a>
+        <a href="https://moodle.epf.fr" target="_blank">Contact</a>
+         <!-- Bouton IA -->
+  <button onclick="location.href='ia_bis_bis.html'" style="
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="IA" width="24" height="24" />
+</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Construisons l’éducation de demain</h1>
+      <p>Techavenir conçoit des espaces d’enseignement immersifs, interactifs et connectés pour une pédagogie 4.0</p>
+      <button onclick="location.href='solutions.html'">Découvrir nos solutions</button>
+    </div>
+  </section>
+
+  <section class="vision container">
+    <h2 id="vision">Notre Vision</h2>
+    <p>Réunir design, technologie et bien-être pour transformer les lieux d’apprentissage en véritables hubs d’innovation éducative.</p>
+  </section>
+
+  <section class="features container">
+    <div class="card-grid">
+      <div class="card">
+        <h3>Classes connectées</h3>
+        <p>Écrans interactifs, Wi-Fi haute densité, objets intelligents pour un apprentissage augmenté.</p>
+      </div>
+      <div class="card">
+        <h3>Ergonomie & bien-être</h3>
+        <p>Mobilier adaptatif, acoustique maîtrisée, éclairage circadien pour des environnements sains.</p>
+      </div>
+      <div class="card">
+        <h3>Immersion numérique</h3>
+        <p>Réalité virtuelle, intelligence artificielle et plateformes intelligentes d’apprentissage.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Techavenir – Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="EY-CzNa1eaQVEPs238EkB";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+</body>
+</html>
