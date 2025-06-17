@@ -9,6 +9,8 @@ const btnDownloadPdf = document.getElementById("btnDownloadPdf");
 const btnPlayAudio = document.getElementById("btnPlayAudio");
 const log = document.getElementById("log");
 const btnClearFile = document.getElementById("btnClearFile");
+const btnmindmap = document.getElementById("btnmindmap");
+const mindMapImage = document.getElementById("mindMapImage");
 
 // Création du bouton de téléchargement audio
 const btnDownloadAudio = document.getElementById("btnDownloadAudio");
@@ -261,7 +263,7 @@ btnDownloadPdf.addEventListener("click", () => {
   doc.save("resume.pdf");
 });
 
-btnPlayAudio.addEventListener("click", () => {
+/*btnPlayAudio.addEventListener("click", () => {
   const text = summaryOutput.value.trim();
   if (!text) {
     alert("Aucun résumé à lire.");
@@ -269,7 +271,7 @@ btnPlayAudio.addEventListener("click", () => {
   }
   const utterance = new SpeechSynthesisUtterance(text);
   speechSynthesis.speak(utterance);
-});
+});*/
 
 btnDownloadAudio.addEventListener("click", async () => {
   const text = summaryOutput.value.trim();
@@ -301,4 +303,13 @@ btnClearFile.addEventListener("click", () => {
   summaryOutput.value = "";
   log.textContent = "";
   inputText.focus();
+  mindMapImage.src = "";
+  mindMapImage.style.display = "none";
+  
 });
+
+btnmindmap.addEventListener("click", () => {
+  mindMapImage.src = "mindmap.jpg";
+  mindMapImage.style.display = "block";
+});
+
