@@ -8,16 +8,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="logo">Techavenir</div>
-      <nav style="display: flex; align-items: center; gap: 20px;">
-        <a href="index.html">Accueil</a>
-        <a href="index.html#vision">Vision</a>
-        <a href="https://moodle.epf.fr" target="_blank">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <aside class="sidebar" aria-label="Menu de navigation">
+    <div class="logo">Menu</div>
+    <div class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+    <nav>
+      <a href="index.html" data-icon="🏠" title="Accueil">Accueil</a>
+      <a href="resume.html" data-icon="📝" title="resume">resume</a>
+      <a href="EPF.html" data-icon="🏫" title="EPF">EPF</a>
+      <a href="solutions.html" data-icon="💡" title="Solutions">Solutions</a>
+      <a href="fiches.html" data-icon="📚" title="Ressources">Ressources</a>
+      <a href="raison d'etre.html" data-icon="🎯" title="Raison d'être">Raison d'être</a>
+      <hr style="width:90%; border:none; border-top:1px solid #ddd; margin: 1rem auto;" />
+      <a href="https://moodle.epf.fr" target="_blank" data-icon="📖" title="Moodle">Moodle</a>
+      <a href="https://epfedu.sharepoint.com/" target="_blank" data-icon="🗂️" title="Sharepoint">Sharepoint EPF</a>
+      <a href="https://outlook.office.com/mail" target="_blank" data-icon="✉️" title="Messagerie">Messagerie EPF</a>
+      <a href="https://epf.jobteaser.com/fr" target="_blank" data-icon="💼" title="Stages">Portail des stages</a>
+      <a href="https://vapp.epf.fr/" target="_blank" data-icon="🖥️" title="Citrix">Citrix</a>
+      <a href="https://drive.google.com/" target="_blank" data-icon="☁️" title="Mon Drive">Mon Drive</a>
+    </nav>
+  </aside>
+
 
   <section class="container">
     <h1>Nos solutions pour l’enseignement 4.0</h1>
@@ -25,16 +39,28 @@
 
     <div class="card-grid">
       <div class="card">
-        <h3>Chat Bot interactif</h3>
-        <p>Un chat Bot disponible 24/24 pour un suivit adapté et disponible.</p>
+        <h3>Casque en réalité virtuelle</h3>
+        <p>La réalité virtuelle permet de transformer l’apprentissage en ingénierie en une expérience immersive et interactive, où l’on peut observer en direct la déformation d’un pont, manipuler des pièces 3D, collaborer à distance dans des salles virtuelles, ou encore suivre des formations comme CATIA V5 à travers des interfaces flottantes intuitives.</p>
       </div>
       <div class="card">
-        <h3>Nouvelle salle de classe</h3>
-        <p>Remodélisation des batiments et des salles de classes pour une expérience immersive.</p>
+        <h3>Table modulable connctée</h3>
+        <p>Repenser la structure enseignante, avec de nouveau meuble modulable, pour entretenir l’interet des eleves.</p>
       </div>
       <div class="card">
-        <h3>Analyse de données</h3>
-        <p>Suivi de l’engagement des élèves grâce à des outils d’analyse intelligente.</p>
+        <h3>Mur intelligent</h3>
+        <p>Cette technologie visent à faciliter la gestion de projets, encourager une collaboration active, exploiter l’intelligence artificielle pour guider le travail, tout en rendant les processus plus accessibles, inclusifs, sécurisés et traçables.</p>
+      </div>
+      <div class="card">
+        <h3>Plateforme multifonctionnelle personalisée</h3>
+        <p>Site web intuitif et équipé d'un chatbot qui aide de facon pédagogique l'éleve (ne donne pas les réponses mais met sur la voie).</p>
+      </div>
+      <div class="card">
+        <h3>Cours multimodal instantané (CMI)</h3>
+        <p>L’intégration de ces outils permet d’adapter automatiquement les contenus pédagogiques aux profils cognitifs des étudiants (visuel, auditif, kinesthésique), de renforcer l’accessibilité pour les personnes en situation de handicap ou souffrant de troubles cognitifs, et d’optimiser la révision ainsi que l’apprentissage mobile.</p>
+      </div>
+      <div class="card">
+        <h3>Feedback aux professeurs</h3>
+        <p>À la fin du cours, l’étudiant remplit un formulaire dans l’appli ; l’IA génère une synthèse pour l’enseignant et l’administration, améliorant écoute, adaptation des cours et suivi pédagogique.</p>
       </div>
     </div>
   </section>
