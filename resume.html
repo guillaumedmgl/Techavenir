@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Résumé de Cours Automatique - Texte ou Fichier</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="script_ia.js"></script>
+</head>
+<body>
+
+<aside class="sidebar" aria-label="Menu de navigation">
+    <div class="logo">Menu</div>
+<div class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+    <!-- <span class="menu-text">Menu</span> -->
+    <nav>
+      <a href="index.html" data-icon="🏠" title="Accueil">Accueil</a>
+      <a href="resume.html" data-icon="📝" title="resume">resume</a>
+      <a href="EPF.html" data-icon="🏫" title="EPF">EPF</a>
+      <a href="solutions.html" data-icon="💡" title="Solutions">Solutions</a>
+      <a href="fiches.html" data-icon="📚" title="Ressources">Ressources</a>
+      <a href="raison d'etre.html" data-icon="🎯" title="Raison d'être">Raison d'être</a>
+      <hr style="width:90%; border:none; border-top:1px solid #ddd; margin: 1rem auto;" />
+      <a href="https://moodle.epf.fr" target="_blank" data-icon="📖" title="Moodle">Moodle</a>
+      <a href="https://epfedu.sharepoint.com/" target="_blank" data-icon="🗂️" title="Sharepoint">Sharepoint EPF</a>
+      <a href="https://outlook.office.com/mail" target="_blank" data-icon="✉️" title="Messagerie">Messagerie EPF</a>
+      <a href="https://epf.jobteaser.com/fr" target="_blank" data-icon="💼" title="Stages">Portail des stages</a>
+      <a href="https://vapp.epf.fr/" target="_blank" data-icon="🖥️" title="Citrix">Citrix</a>
+      <a href="https://drive.google.com/" target="_blank" data-icon="☁️" title="Mon Drive">Mon Drive</a>
+      <!-- <a href="https://a10da3dc-b79b-4a1d-a93f-d0fa80af9329-00-vxa8lrqh6osz.picard.replit.dev/" target="_blank" data-icon="☁️" title="Mon ia">Mon ia</a> -->
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header>
+      <h1 class="header-title">Résumé automatique - Texte ou fichier</h1>
+    </header>
+
+    <section class="container zone lightblue" style="margin-top: 80px;">
+      <div class="input-group">
+        <label for="inputText" class="highlight">Saisir du texte à résumer :</label>
+        <textarea id="inputText" rows="6" placeholder="Tapez ou collez votre texte ici..." style="width:100%; border-radius:12px; padding:1rem; border:1px solid var(--primary); font-family:inherit;"></textarea>
+      </div>
+
+      <div class="input-group upload-section" style="margin-top:1.5rem;">
+        <label for="fileInput" class="highlight">Ou choisir un fichier (.txt, .pdf) :</label>
+        <input type="file" id="fileInput" accept=".txt,.pdf" />
+        <button id="btnClearFile" title="Supprimer le fichier uploadé">❌ Supprimer fichier</button>
+      </div>
+
+      <button id="btnProcess" class="btn" style="margin-top:1.5rem; width: 100%; max-width: 300px;">Envoyer et Résumer long</button>
+      <button id="btnProcess2" class="btn" style="margin-top:1.5rem; width: 100%; max-width: 300px;">Envoyer et Résumer court</button>
+
+      <h2 style="margin-top: 2rem; color: var(--primary);">Résumé :</h2>
+      <textarea id="summaryOutput" rows="10" placeholder="Le résumé s'affichera ici..." readonly style="width:100%; border-radius:12px; padding:1rem; border:1px solid var(--primary); font-family:inherit;"></textarea>
+
+      <div class="btn-group" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button id="btnDownloadPdf" class="btn" style="flex:1; min-width: 140px;">Télécharger le résumé PDF</button>
+        <button id="btnPlayAudio" class="btn" style="flex:1; min-width: 140px;">Lire audio</button>
+        <button id="btnDownloadAudio" class="btn" style="flex:1; min-width: 140px;">Télécharger audio</button>
+        <button id="mettre votre bouton ici" class="btn" style="flex:1; min-width: 140px;">Envoyer aux élèves</button>
+      </div>
+
+      <pre id="log" class="log" style="margin-top: 2rem; background: var(--card-bg); padding: 1rem; border-radius: 12px; max-height: 150px; overflow-y: auto;"></pre>
+    </section>
+  </main>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="EY-CzNa1eaQVEPs238EkB";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+</body>
+</html>

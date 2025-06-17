@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raison d'être – Techavenir</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <style>
+    /* Ajout d'espace entre les zones */
+    .zone {
+      margin-bottom: 2.5rem; /* espace vertical entre sections */
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar" aria-label="Menu de navigation">
+    <div class="logo">Menu</div>
+    <div class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+    <nav>
+      <a href="index.html" data-icon="🏠" title="Accueil">Accueil</a>
+      <a href="resume.html" data-icon="📝" title="resume">resume</a>
+      <a href="EPF.html" data-icon="🏫" title="EPF">EPF</a>
+      <a href="solutions.html" data-icon="💡" title="Solutions">Solutions</a>
+      <a href="fiches.html" data-icon="📚" title="Ressources">Ressources</a>
+      <a href="raison d'etre.html" data-icon="🎯" title="Raison d'être">Raison d'être</a>
+      <hr style="width:90%; border:none; border-top:1px solid #ddd; margin: 1rem auto;" />
+      <a href="https://moodle.epf.fr" target="_blank" data-icon="📖" title="Moodle">Moodle</a>
+      <a href="https://epfedu.sharepoint.com/" target="_blank" data-icon="🗂️" title="Sharepoint">Sharepoint EPF</a>
+      <a href="https://outlook.office.com/mail" target="_blank" data-icon="✉️" title="Messagerie">Messagerie EPF</a>
+      <a href="https://epf.jobteaser.com/fr" target="_blank" data-icon="💼" title="Stages">Portail des stages</a>
+      <a href="https://vapp.epf.fr/" target="_blank" data-icon="🖥️" title="Citrix">Citrix</a>
+      <a href="https://drive.google.com/" target="_blank" data-icon="☁️" title="Mon Drive">Mon Drive</a>
+    </nav>
+  </aside>
+
+  <main class="container">
+
+    <section class="zone blue">
+      <h1>Notre raison d’être</h1>
+      <p><span class="highlight">Techavenir</span> s’engage à transformer l’expérience éducative en alliant technologie de pointe, inclusion et innovation responsable.</p>
+    </section>
+
+    <section class="zone pink">
+      <h3>Définition juridique</h3>
+      <p><span class="highlight">La raison d’être</span> de <span class="highlight">Techavenir</span> exprime notre identité profonde, notre finalité sociale et notre ambition collective :</p>
+      <blockquote>“<span class="highlight">Concevoir des environnements d’apprentissage durables, immersifs et accessibles</span>, en mobilisant les technologies numériques pour accompagner la transition éducative et sociétale.”</blockquote>
+    </section>
+
+    <section class="zone green">
+      <h3>Notre vision</h3>
+      <p>Nous croyons que <span class="highlight">l’éducation</span> est un levier essentiel pour bâtir un avenir meilleur.<br />
+      <span class="highlight">Techavenir</span> ambitionne de <span class="highlight">réinventer les méthodes d’enseignement</span> grâce à des solutions intelligentes, interactives et adaptatives.</p>
+    </section>
+
+    <section class="zone yellow">
+      <h3>Notre mission</h3>
+      <ul>
+        <li><span class="highlight">Innover dans l’éducation numérique</span> : apprentissage plus personnalisé, engageant et inclusif.</li>
+        <li><span class="highlight">Favoriser l’inclusion</span> : des outils accessibles pour tous les profils.</li>
+        <li><span class="highlight">Encourager l’apprentissage continu</span> : compétences tout au long de la vie.</li>
+        <li><span class="highlight">Collaborer avec les enseignants</span> : co-conception de solutions concrètes.</li>
+        <li><span class="highlight">Respecter l’éthique et la confidentialité</span> : usage responsable des technologies.</li>
+      </ul>
+    </section>
+
+    <section class="zone blue">
+      <h3>Nos domaines d’action</h3>
+      <div class="card-grid">
+        <div class="card">
+          <h4>Réalité virtuelle immersive</h4>
+          <p>Stages virtuels pour explorer les métiers sans contraintes géographiques.</p>
+        </div>
+        <div class="card">
+          <h4>Parcours adaptatifs</h4>
+          <p>Contenus personnalisés selon le rythme et les besoins de chaque apprenant.</p>
+        </div>
+        <div class="card">
+          <h4>Collaborations éducatives</h4>
+          <p>Mini-jeux, padlets, et outils interactifs créés avec les enseignants.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="zone green">
+      <h3>Un modèle responsable</h3>
+      <p>Nous intégrons les principes de <span class="highlight">l’éco-conception</span>, <span class="highlight">la durabilité</span> et <span class="highlight">la circularité</span> dans toutes nos solutions.</p>
+      <p>Nos environnements 4.0 visent à <span class="highlight">réduire l’empreinte carbone</span> tout en maximisant l’impact social.</p>
+    </section>
+
+    <section class="zone pink">
+      <h3>Un avenir pour tous</h3>
+      <p><span class="highlight">Techavenir</span> se positionne comme un acteur clé de <span class="highlight">l’éducation inclusive</span> et <span class="highlight">éthique</span>.</p>
+      <p>Notre promesse : <em><span class="highlight">L’innovation au cœur de l’apprentissage</span>.</em></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Techavenir – Tous droits réservés.</p>
+    </div>
+  </footer>
+  <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="EY-CzNa1eaQVEPs238EkB";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+</body>
+</html>
