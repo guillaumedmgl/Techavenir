@@ -2,193 +2,106 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fiches de Révision – Techavenir</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Techavenir – L’enseignement 4.0</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<header>
-  <div class="container nav">
-    <div class="logo">Techavenir</div>
+  <aside class="sidebar" aria-label="Menu de navigation">
+    <div class="logo">Menu</div>
+<div class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+    <!-- <span class="menu-text">Menu</span> -->
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="index.html#vision">Vision</a>
-      <a href="https://moodle.epf.fr" target="_blank">Contact</a>
+      <a href="index.html" data-icon="🏠" title="Accueil">Accueil</a>
+      <a href="resume.html" data-icon="📝" title="resume">resume</a>
+      <a href="EPF.html" data-icon="🏫" title="EPF">EPF</a>
+      <a href="solutions.html" data-icon="💡" title="Solutions">Solutions</a>
+      <a href="fiches.html" data-icon="📚" title="Ressources">Ressources</a>
+      <a href="raison d'etre.html" data-icon="🎯" title="Raison d'être">Raison d'être</a>
+      <hr style="width:90%; border:none; border-top:1px solid #ddd; margin: 1rem auto;" />
+      <a href="https://moodle.epf.fr" target="_blank" data-icon="📖" title="Moodle">Moodle</a>
+      <a href="https://epfedu.sharepoint.com/" target="_blank" data-icon="🗂️" title="Sharepoint">Sharepoint EPF</a>
+      <a href="https://outlook.office.com/mail" target="_blank" data-icon="✉️" title="Messagerie">Messagerie EPF</a>
+      <a href="https://epf.jobteaser.com/fr" target="_blank" data-icon="💼" title="Stages">Portail des stages</a>
+      <a href="https://vapp.epf.fr/" target="_blank" data-icon="🖥️" title="Citrix">Citrix</a>
+      <a href="https://drive.google.com/" target="_blank" data-icon="☁️" title="Mon Drive">Mon Drive</a>
+      <!-- <a href="https://a10da3dc-b79b-4a1d-a93f-d0fa80af9329-00-vxa8lrqh6osz.picard.replit.dev/" target="_blank" data-icon="☁️" title="Mon ia">Mon ia</a> -->
     </nav>
-  </div>
+  </aside>
+
+    <!-- Contenu principal -->
+  <div class="main-content">
+
+    <!-- Header (fixé) -->
+<header>
+  <h1 class="header-title">
+    Techavenir
+    <span class="powered">powered by</span>
+  </h1>
+    <img src="EPF_logo.png" alt="Logo EPF" class="logo-epf">
 </header>
 
-<section class="container">
-  <h1 style="text-align: center; color: var(--primary);">📚 Mes Fiches de Révision</h1>
-  <p style="text-align: center; margin-top: 1rem;">
-    Sélectionne un fichier PDF à visionner ou télécharger
+  <section class="hero">
+    <div class="container">
+      <h1>Construisons l’éducation de demain</h1>
+      <p>Techavenir conçoit des espaces d’enseignement immersifs, interactifs et connectés pour une pédagogie 4.0</p>
+      <button onclick="location.href='solutions.html'">Découvrir nos solutions</button>
+    </div>
+  </section>
+
+  <section class="vision container">
+    <h2 id="vision">Notre Vision</h2>
+    <p>Réunir design, technologie et bien-être pour transformer les lieux d’apprentissage en véritables hubs d’innovation éducative.</p>
+  </section>
+
+  <section class="features container">
+    <div class="card-grid">
+<div class="card">
+  <h3>Technologie vertes</h3>
+  <p>
+    <h4>Chez Techavenir,</h4> nous concevons des technologies 
+    <h4>durables</h4> et <h4>responsables</h4>, en intégrant dès la conception des principes 
+    d’<h4>éco-conception</h4>, d’<h4>efficacité énergétique</h4> et de <h4>circularité</h4>.
+    <br><br>
+    Nous nous engageons à <h4>réduire notre empreinte carbone</h4>, à 
+    <h4>allonger la durée de vie</h4> des équipements, et à promouvoir une 
+    <h4>innovation éthique</h4> et <h4>accessible à tous</h4>.
+    <br><br>
+    La technologie doit être un <h4>levier au service de la planète</h4>, 
+    des personnes et des <h4>générations futures</h4>.
   </p>
+</div>
 
-  <div class="upload-section">
-    <input type="file" id="pdfFile" accept="application/pdf" />
-    <br />
-    <button onclick="previewPDF()">📖 Visionner</button>
-    <button onclick="downloadPDF()">⬇️ Télécharger</button>
+      <div class="card">
+        <h3>Inclusivité</h3>
+        <p><h4>La pédagogie inclusive</h4> vise à offrir un apprentissage adapté à la <h4>diversité</h4> des étudiants, en tenant compte de leurs <h4>besoins</h4>, <h4>origines</h4> et <h4>capacités</h4>.
+<br><br>
 
-    <iframe id="pdfViewer"></iframe>
-  </div>
+Elle permet de <h4>prévenir le décrochage</h4>, de renforcer l’<h4>engagement</h4> et de préparer des ingénieurs <h4>responsables</h4> et ouverts à la <h4>pluralité</h4> de la société.
 
-  <h2 style="text-align: center; margin-top: 3rem; color: var(--primary);">📥 Fiches en ligne</h2>
-
-  <div class="fiche-cards">
-    <div class="fiche-card">
-      <h3>📄 Fiche 1 – Résistance des Matériaux</h3>
-      <div class="fiche-buttons">
-        <button
-          class="btn"
-          onclick="visionnerEnLigne('https://drive.google.com/file/d/19i65g06_nhSZx5naNHAza6lH6VwfBbN2/preview')"
-        >
-          👁️ Visionner
-        </button>
-        <a
-          href="https://drive.google.com/uc?export=download&id=19i65g06_nhSZx5naNHAza6lH6VwfBbN2"
-          class="btn"
-          >⬇️ Télécharger</a
-        >
+<br><br>
+      </div>
+      <div class="card">
+        <h3>Immersion numérique</h3>
+        <p>Réalité virtuelle, intelligence artificielle et plateformes intelligentes d’apprentissage.</p>
       </div>
     </div>
+  </section>
 
-    <div class="fiche-card">
-      <h3>📄 Fiche 2 – Thermodynamique</h3>
-      <div class="fiche-buttons">
-        <button
-          class="btn"
-          onclick="visionnerEnLigne('https://drive.google.com/file/d/1tFkdv1zux1VV2rkNBI_0eJJjvIqwfJc-/preview')"
-        >
-          👁️ Visionner
-        </button>
-        <a
-          href="https://drive.google.com/uc?export=download&id=1tFkdv1zux1VV2rkNBI_0eJJjvIqwfJc-"
-          class="btn"
-          >⬇️ Télécharger</a
-        >
-      </div>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Techavenir – Tous droits réservés.</p>
     </div>
+  </footer>
 
-    <div class="fiche-card">
-      <h3>📄 Fiche 3 – Électrotechnique</h3>
-      <div class="fiche-buttons">
-        <button
-          class="btn"
-          onclick="visionnerEnLigne('https://drive.google.com/file/d/1gAn6hkQWSX2rBx6z1rYZF2oJ4zQe8ItF/preview')"
-        >
-          👁️ Visionner
-        </button>
-        <a
-          href="https://drive.google.com/uc?export=download&id=1gAn6hkQWSX2rBx6z1rYZF2oJ4zQe8ItF"
-          class="btn"
-          >⬇️ Télécharger</a
-        >
-      </div>
-    </div>
-
-    <div class="fiche-card">
-      <h3>📄 Fiche 4 – Automatique</h3>
-      <div class="fiche-buttons">
-        <button
-          class="btn"
-          onclick="visionnerEnLigne('https://drive.google.com/file/d/1FfsUPMOQpt87S5qNcqWkiA80-7C4L1Ag/preview')"
-        >
-          👁️ Visionner
-        </button>
-        <a
-          href="https://drive.google.com/uc?export=download&id=1FfsUPMOQpt87S5qNcqWkiA80-7C4L1Ag"
-          class="btn"
-          >⬇️ Télécharger</a
-        >
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <p>&copy; 2025 Techavenir – Tous droits réservés.</p>
-  </div>
-</footer>
-
+  <script src="script.js"></script>
 <script>
-  let selectedFile;
-
-  document.getElementById('pdfFile').addEventListener('change', function (event) {
-    selectedFile = event.target.files[0];
-  });
-
-  function previewPDF() {
-    if (!selectedFile) {
-      alert('Merci de sélectionner un fichier PDF d\'abord !');
-      return;
-    }
-    const fileURL = URL.createObjectURL(selectedFile);
-    const iframe = document.getElementById('pdfViewer');
-    iframe.src = fileURL;
-    iframe.style.display = 'block';
-    iframe.style.width = '100%';
-    iframe.style.height = '600px';
-    iframe.style.marginTop = '1rem';
-  }
-
-  function downloadPDF() {
-    if (!selectedFile) {
-      alert('Merci de sélectionner un fichier PDF d\'abord !');
-      return;
-    }
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(selectedFile);
-    link.download = selectedFile.name;
-    link.click();
-  }
-
-  function visionnerEnLigne(url) {
-    const iframe = document.getElementById('pdfViewer');
-    iframe.src = url;
-    iframe.style.display = 'block';
-    iframe.style.width = '100%';
-    iframe.style.height = '600px';
-    iframe.style.marginTop = '1rem';
-    iframe.scrollIntoView({ behavior: 'smooth' });
-  }
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="EY-CzNa1eaQVEPs238EkB";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
-
-<script>
-  (function () {
-    if (!window.chatbase || window.chatbase('getState') !== 'initialized') {
-      window.chatbase = (...arguments) => {
-        if (!window.chatbase.q) {
-          window.chatbase.q = [];
-        }
-        window.chatbase.q.push(arguments);
-      };
-      window.chatbase = new Proxy(window.chatbase, {
-        get(target, prop) {
-          if (prop === 'q') {
-            return target.q;
-          }
-          return (...args) => target(prop, ...args);
-        },
-      });
-    }
-    const onLoad = function () {
-      const script = document.createElement('script');
-      script.src = 'https://www.chatbase.co/embed.min.js';
-      script.id = 'EY-CzNa1eaQVEPs238EkB';
-      script.domain = 'www.chatbase.co';
-      document.body.appendChild(script);
-    };
-    if (document.readyState === 'complete') {
-      onLoad();
-    } else {
-      window.addEventListener('load', onLoad);
-    }
-  })();
-</script>
-
 </body>
 </html>
