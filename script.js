@@ -24,4 +24,4 @@ document.getElementById('discoverBtn').addEventListener('click', () => {
       addMessage('Erreur : ' + error.message, 'bot');
     }
   }
-  
+
