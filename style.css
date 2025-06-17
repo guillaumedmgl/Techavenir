@@ -9,18 +9,22 @@
     scroll-padding-top: 150px; /* hauteur approximative de ton header */
   }
   
-  body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-  }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
   
   /* Container */
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    flex: 1;
   }
   
   /* Header */
@@ -109,22 +113,23 @@
     padding: 2rem 0 4rem;
   }
   
-  .card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-  }
-  
-  .card {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    padding: 2rem;
-    width: 320px;
-    transition: transform 0.3s;
-  }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-items: center; /* centre les cartes dans leurs colonnes */
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  width: 100%;        /* prend toute la largeur de la colonne */
+  max-width: 320px;   /* limite la taille */
+  transition: transform 0.3s;
+}
   
   .card:hover {
     transform: translateY(-5px);
@@ -134,13 +139,20 @@
     color: var(--primary);
     margin-bottom: 0.5rem;
   }
+  h4 {
+  font-size: 1rem; /* même taille que le texte normal */
+  font-weight: bold;
+  color: var(--primary);
+  margin: 0;
+  display: inline;
+}
   
   /* Footer */
   footer {
     background-color: #1f2937;
     color: white;
     text-align: center;
-    padding: 2rem;
+    padding: 0.1rem;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
   }
@@ -256,4 +268,356 @@
   margin-top: 1rem;
 }
 
+/* ============================
+   Chat Bot Section
+============================ */
+
+/* Conteneur du chat */
+#chat {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  height: 500px;
+}
+
+/* Message (user ou bot) */
+.message {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.bot {
+  justify-content: flex-start;
+}
+
+/* Bulles */
+.bubble {
+  max-width: 70%;
+  padding: 0.75rem 1rem;
+  border-radius: 16px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.message.user .bubble {
+  background-color: #e0e7ff;
+  border-bottom-right-radius: 4px;
+}
+
+.message.bot .bubble {
+  background-color: #d1fae5;
+  border-bottom-left-radius: 4px;
+}
+
+/* Avatar */
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #c4c4c4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+}
+
+/* Zone de saisie */
+#input-area {
+  width: 100%;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  display: flex;
+  gap: 1rem;
+}
+
+#input-area input[type="text"] {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#input-area button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#input-area button:hover {
+  background-color: var(--secondary);
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Nuances de bleu pour les zones, sans modifier .container ni styles globaux */
+
+/* Zone par défaut (si besoin) */
+.zone {
+  background-color: #f0f4ff; /* très clair, nuance neutre */
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(43, 80, 236, 0.1); /* léger bleu */
+}
+
+/* Différentes nuances de bleu pour les zones spécifiques */
+.zone.blue {
+  background-color: #d9e4ff; /* bleu clair */
+}
+
+.zone.lightblue {
+  background-color: #b4c7ff; /* bleu un peu plus saturé */
+}
+
+.zone.skyblue {
+  background-color: #a0bfff; /* autre nuance bleue */
+}
+
+.zone.deepblue {
+  background-color: #3752ff; /* bleu plus soutenu */
+  color: white; /* pour contraste */
+}
+
+/* Pour garder cohérence des textes mis en valeur */
+.highlight {
+  color: #2b50ec; /* bleu saturé */
+  font-weight: 600;
+}
+
+/* Bloc citation */
+blockquote {
+  background: #e6efff;
+  border-left: 4px solid #2b50ec;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: #1a2e7a;
+}
+
+/* Menu latéral fixe */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 60px;
+  background-color: white;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.1);
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+/* Élargir sidebar au hover */
+.sidebar:hover {
+  width: 250px;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+/* Logo dans sidebar (caché par défaut) */
+.sidebar .logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar:hover .logo {
+  opacity: 1;
+}
+
+/* Menu de navigation */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  padding-left: 1rem;
+  padding-bottom: 2rem; /* <-- espace en bas */
+}
+
+.sidebar nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0.5rem;/* si tu veux réduire la taille des zones de textes */
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  font-size: 0.8rem; /* si tu veux réduire la taille du texte */
+}
+
+.sidebar:hover nav a {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar:hover nav a:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.sidebar nav a::before {
+  content: attr(data-icon);
+  font-size: 1.3rem;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+/* Décaler uniquement la zone main-content */
+.main-content {
+  margin-left: 60px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar:hover ~ .main-content {
+  margin-left: 220px;
+}
+
+/* Header fixe, décalé avec le main content */
+header {
+  position: fixed;
+  top: 0;
+  left: 60px;
+  right: 0;
+  height: 60px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 900;
+  transition: left 0.3s ease;
+}
+
+.sidebar:hover + .main-content header {
+  left: 220px;
+}
+/*
+.menu-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 1.2rem;       
+  color: #007BFF;          
+  position: absolute;
+  bottom: 10rem;        
+  left: 14px;              
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.sidebar:hover .menu-text {
+  opacity: 0; 
+}
+*/
+
+.menu-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 100%;
+  background-color: #6c47ff; /* bleu primaire */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* logo epf */
+.logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.logo-epf {
+  height: 40px;
+  width: auto;
+  vertical-align: sub;  /* alignement en bas, comme le powered */
+  margin-left: 0.5em;  /* espace entre powered by et logo */
+}
+
+/* logo entreprise */
+
+.logo-entreprise {
+  height: 40px;
+  width: auto;
+}
  
+.header-title {
+  font-weight: 800;
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.powered {
+  font-size: 0.6em;          /* plus petit */
+  vertical-align: sub;       /* position en bas, exposant inférieur */
+  color: black;              /* couleur normale */
+  margin-left: 0.5em;        /* petit espace à gauche */
+  font-weight: normal;       /* pas en gras */
+  font-style: italic;        /* italique */
+}
+
+.fiche-selection {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fiche-selection select {
+  padding: 0.5rem;
+  font-weight: 600;
+}
