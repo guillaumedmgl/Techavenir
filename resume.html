@@ -61,14 +61,18 @@
 
       <div class="btn-group" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
         <button id="btnDownloadPdf" class="btn" style="flex:1; min-width: 140px;">Télécharger le résumé PDF</button>
-        <button id="btnPlayAudio" class="btn" style="flex:1; min-width: 140px;">Lire audio</button>
+        <!-- <button id="btnPlayAudio" class="btn" style="flex:1; min-width: 140px;">Lire audio</button> -->
+        <button id="btnmindmap" class="btn" style="flex:1; min-width: 140px;">Générer Mind Map</button>
         <button id="btnDownloadAudio" class="btn" style="flex:1; min-width: 140px;">Télécharger audio</button>
         <button id="mettre votre bouton ici" class="btn" style="flex:1; min-width: 140px;">Envoyer aux élèves</button>
+        <img id="mindMapImage" style="margin-top: 1rem; max-width: 100%; display: none;" />
       </div>
 
       <pre id="log" class="log" style="margin-top: 2rem; background: var(--card-bg); padding: 1rem; border-radius: 12px; max-height: 150px; overflow-y: auto;"></pre>
     </section>
   </main>
+
+
 <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="EY-CzNa1eaQVEPs238EkB";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
