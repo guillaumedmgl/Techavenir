@@ -8,18 +8,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="logo">Techavenir</div>
-      <nav style="display: flex; align-items: center; gap: 20px;">
-        <a href="#">Accueil</a>
-        <a href="#vision">Vision</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="fiches.html">fiches</a>
-        <a href="https://moodle.epf.fr" target="_blank">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <aside class="sidebar" aria-label="Menu de navigation">
+    <div class="logo">Menu</div>
+<div class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+    <!-- <span class="menu-text">Menu</span> -->
+    <nav>
+      <a href="index.html" data-icon="🏠" title="Accueil">Accueil</a>
+      <a href="resume.html" data-icon="📝" title="resume">resume</a>
+      <a href="EPF.html" data-icon="🏫" title="EPF">EPF</a>
+      <a href="solutions.html" data-icon="💡" title="Solutions">Solutions</a>
+      <a href="fiches.html" data-icon="📚" title="Ressources">Ressources</a>
+      <a href="raison d'etre.html" data-icon="🎯" title="Raison d'être">Raison d'être</a>
+      <hr style="width:90%; border:none; border-top:1px solid #ddd; margin: 1rem auto;" />
+      <a href="https://moodle.epf.fr" target="_blank" data-icon="📖" title="Moodle">Moodle</a>
+      <a href="https://epfedu.sharepoint.com/" target="_blank" data-icon="🗂️" title="Sharepoint">Sharepoint EPF</a>
+      <a href="https://outlook.office.com/mail" target="_blank" data-icon="✉️" title="Messagerie">Messagerie EPF</a>
+      <a href="https://epf.jobteaser.com/fr" target="_blank" data-icon="💼" title="Stages">Portail des stages</a>
+      <a href="https://vapp.epf.fr/" target="_blank" data-icon="🖥️" title="Citrix">Citrix</a>
+      <a href="https://drive.google.com/" target="_blank" data-icon="☁️" title="Mon Drive">Mon Drive</a>
+      <!-- <a href="https://a10da3dc-b79b-4a1d-a93f-d0fa80af9329-00-vxa8lrqh6osz.picard.replit.dev/" target="_blank" data-icon="☁️" title="Mon ia">Mon ia</a> -->
+    </nav>
+  </aside>
+
+    <!-- Contenu principal -->
+  <div class="main-content">
+
+    <!-- Header (fixé) -->
+<header>
+  <h1 class="header-title">
+    Techavenir
+    <span class="powered">powered by</span>
+  </h1>
+    <img src="EPF_logo.png" alt="Logo EPF" class="logo-epf">
+</header>
 
   <section class="hero">
     <div class="container">
@@ -36,13 +61,30 @@
 
   <section class="features container">
     <div class="card-grid">
+<div class="card">
+  <h3>Technologie vertes</h3>
+  <p>
+    <h4>Chez Techavenir,</h4> nous concevons des technologies 
+    <h4>durables</h4> et <h4>responsables</h4>, en intégrant dès la conception des principes 
+    d’<h4>éco-conception</h4>, d’<h4>efficacité énergétique</h4> et de <h4>circularité</h4>.
+    <br><br>
+    Nous nous engageons à <h4>réduire notre empreinte carbone</h4>, à 
+    <h4>allonger la durée de vie</h4> des équipements, et à promouvoir une 
+    <h4>innovation éthique</h4> et <h4>accessible à tous</h4>.
+    <br><br>
+    La technologie doit être un <h4>levier au service de la planète</h4>, 
+    des personnes et des <h4>générations futures</h4>.
+  </p>
+</div>
+
       <div class="card">
-        <h3>Classes connectées</h3>
-        <p>Écrans interactifs, Wi-Fi haute densité, objets intelligents pour un apprentissage augmenté.</p>
-      </div>
-      <div class="card">
-        <h3>Ergonomie & bien-être</h3>
-        <p>Mobilier adaptatif, acoustique maîtrisée, éclairage circadien pour des environnements sains.</p>
+        <h3>Inclusivité</h3>
+        <p><h4>La pédagogie inclusive</h4> vise à offrir un apprentissage adapté à la <h4>diversité</h4> des étudiants, en tenant compte de leurs <h4>besoins</h4>, <h4>origines</h4> et <h4>capacités</h4>.
+<br><br>
+
+Elle permet de <h4>prévenir le décrochage</h4>, de renforcer l’<h4>engagement</h4> et de préparer des ingénieurs <h4>responsables</h4> et ouverts à la <h4>pluralité</h4> de la société.
+
+<br><br>
       </div>
       <div class="card">
         <h3>Immersion numérique</h3>
